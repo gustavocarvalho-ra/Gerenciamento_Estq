@@ -9,7 +9,7 @@ def menu() :
     [3] - Vizualizar estoque
     [4] - Sair
   ''')
-  return str(input('Digite a opição desejada: '))
+  return str(input('Digite a opção desejada: '))
 
 def master():
   opcao_desejada = menu()
