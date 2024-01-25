@@ -12,9 +12,9 @@ def menu() :
   return str(input('Digite a opição desejada: '))
 
 def master():
-  opicao_desejada = menu()
-  while opicao_desejada != '4':
-    if (opicao_desejada == '1'):
+  opcao_desejada = menu()
+  while opcao_desejada != '4':
+    if (opcao_desejada == '1'):
       produto = {}
       nome_produto = str(input('Nome do produto a adicionar: '))
       preco_produto = str(input('Preço do produto: '))
@@ -22,8 +22,8 @@ def master():
       produto = {'nome':nome_produto, 'preco':preco_produto, 'quantidade':quantidade_produto}
       produtos.append(produto)
       print('Produto adicionado com êxito!')
-      opicao_desejada = menu()
-    elif (opicao_desejada == '2'):
+      opcao_desejada = menu()
+    elif (opcao_desejada == '2'):
       nome_Aatualizar = str(input('Informe o nome do produto a atualizar: '))
       atualizar = 0
       for a in produtos:
@@ -35,6 +35,16 @@ def master():
           atualizar = 1
       if atualizar == 1:
         print('Produto atualizado com êxito!')
-
-
+      else:
+        print('Produto não encontrado...')
+      opcao_desejada = menu()
+    elif (opcao_desejada == '3'):
+      print('Produtos em estoque:')
+      print(produtos)
+      opcao_desejada = menu()
+    else:
+      print('Opção inexistente.')
+      opcao_desejada = menu()
+  print('Até a próxima!')
+  
 master()
